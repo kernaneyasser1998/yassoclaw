@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>YassoClaw AI — Websites, AI Receptionist &amp; Automation for Local Businesses</title>
+<meta name="description" content="YassoClaw AI builds websites, answers your calls with a 24/7 AI receptionist, and automates follow-up for local businesses — so you can focus on growth.">
+<link rel="canonical" href="https://yassoclaw.com/">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yassoclaw.com/">
+<meta property="og:title" content="YassoClaw AI — Websites, AI Receptionist &amp; Automation for Local Businesses">
+<meta property="og:description" content="YassoClaw AI builds websites, answers your calls with a 24/7 AI receptionist, and automates follow-up for local businesses — so you can focus on growth.">
+<meta property="og:image" content="https://yassoclaw.com/images/barber.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="YassoClaw AI — Websites, AI Receptionist &amp; Automation for Local Businesses">
+<meta name="twitter:description" content="YassoClaw AI builds websites, answers your calls with a 24/7 AI receptionist, and automates follow-up for local businesses — so you can focus on growth.">
+<meta name="twitter:image" content="https://yassoclaw.com/images/barber.jpg">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="images/yassoclaw-logo-icon.png">
+<link rel="apple-touch-icon" href="images/yassoclaw-logo-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "YassoClaw AI",
+  "url": "https://yassoclaw.com/",
+  "logo": "https://yassoclaw.com/images/yassoclaw-logo-icon.png",
+  "email": "contact@yassoclaw.com",
+  "telephone": "+1-516-774-2538",
+  "image": "https://yassoclaw.com/images/barber.jpg",
+  "description": "YassoClaw AI builds websites, answers calls with a 24/7 AI receptionist, and automates repetitive tasks for local businesses.",
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Dev" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Receptionist" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automation" } }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<style>
+:root{
+  --bg:#f5f5f5; --card:#ffffff; --ink:#101010; --muted:#646464; --line:#e2e2e2;
+  --green:#009678; --green-dark:#00755f; --green-soft:#e6f4f1;
+  --shadow:0 10px 30px rgba(0,0,0,.06); --shadow-lg:0 24px 60px rgba(0,0,0,.10);
+  --max:1140px; --radius:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Inter",sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Sora",sans-serif;line-height:1.12;letter-spacing:-.02em;margin:0;color:#000}
+a{color:inherit}
+.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(245,245,245,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Sora";font-weight:800;font-size:1.08rem;color:#000}
+.brand .ai{color:var(--green)}
+.brand-logo{height:46px;width:auto;display:block}
+.foot-logo{height:26px;width:auto;vertical-align:middle;margin-right:8px}
+.nav-links{display:flex;align-items:center;gap:26px}
+.nav-links a{text-decoration:none;font-weight:600;font-size:.88rem;color:var(--muted)}
+.nav-links a:hover{color:#000}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:50px;padding:0 26px;border-radius:999px;text-decoration:none;font-weight:700;font-size:.95rem;border:1px solid transparent;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+.btn.primary{background:var(--green);color:#fff}
+.btn.primary:hover{background:var(--green-dark);transform:translateY(-1px);box-shadow:0 10px 24px rgba(0,150,120,.28)}
+.btn.ghost{border-color:#d2d2d2;color:var(--ink);background:#fff}
+.btn.ghost:hover{border-color:var(--green);color:var(--green-dark)}
+.btn.small{min-height:42px;padding:0 18px;font-size:.85rem}
+/* hero */
+.hero{padding:158px 0 84px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--green-dark);font-weight:800;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}
+.eyebrow .pulse{width:8px;height:8px;border-radius:50%;background:var(--green)}
+.hero h1{font-size:clamp(2.6rem,5.4vw,4.3rem);margin-bottom:20px}
+.hero h1 span{color:var(--green)}
+.hero p.lead{font-size:1.13rem;color:var(--muted);max-width:540px;margin:0 0 32px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-note{margin-top:18px;font-size:.87rem;color:var(--muted)}
+.trades{margin-top:26px;font-size:.85rem;font-weight:600;color:var(--muted)}
+.trades b{color:#000}
+/* hero panel */
+.panel{background:var(--card);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow-lg);padding:30px}
+.panel-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.panel-head .t{font-family:"Sora";font-weight:700;font-size:1rem;color:#000}
+.live{display:inline-flex;align-items:center;gap:7px;background:var(--green-soft);color:var(--green-dark);font-size:.74rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block}
+.hero-img{width:100%;height:240px;object-fit:cover;border-radius:16px;display:block;margin-bottom:22px}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.stat{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:18px}
+.stat .n{font-family:"Sora";font-size:1.9rem;font-weight:800;color:#000;line-height:1}
+.stat .n em{font-style:normal;color:var(--green)}
+.stat p{margin:8px 0 0;font-size:.82rem;color:var(--muted)}
+.svc-list{display:grid;gap:10px}
+.svc-item{display:flex;align-items:center;gap:14px;border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:#fff}
+.svc-item .ic{width:40px;height:40px;border-radius:11px;background:var(--green-soft);display:grid;place-items:center;flex-shrink:0}
+.svc-item .ic svg{width:20px;height:20px;stroke:var(--green-dark);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.svc-item b{display:block;font-size:.93rem;color:#000}
+.svc-item span{font-size:.8rem;color:var(--muted)}
+/* sections */
+.section{padding:88px 0}
+.section.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.section-head{max-width:700px;margin-bottom:44px}
+.section-head h2{font-size:clamp(1.9rem,4.2vw,2.9rem);margin-bottom:13px}
+.section-head h2 span{color:var(--green)}
+.section-head p{color:var(--muted);font-size:1.05rem;margin:0}
+/* problem */
+.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.problem-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;box-shadow:var(--shadow)}
+.problem-card .num{font-family:"Sora";font-size:2.7rem;font-weight:800;color:var(--green);line-height:1;margin-bottom:10px}
+.problem-card p{color:var(--muted);margin:0;font-size:.95rem}
+.problem-card p b{color:#000}
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cards.two{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;box-shadow:var(--shadow);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.card:hover{transform:translateY(-4px);border-color:var(--green);box-shadow:var(--shadow-lg)}
+.card.featured{grid-column:span 2;background:linear-gradient(140deg,#ffffff,#edf7f4);border-color:#bfe0d6}
+.card .icon{width:50px;height:50px;border-radius:13px;background:var(--green-soft);display:grid;place-items:center;margin-bottom:18px}
+.card .icon svg{width:25px;height:25px;stroke:var(--green-dark);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:1.22rem;margin-bottom:9px}
+.card p{color:var(--muted);font-size:.93rem;margin:0}
+.card .tag{display:inline-block;margin-top:15px;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--green-dark);background:var(--green-soft);padding:5px 11px;border-radius:999px}
+.card a.visit{display:inline-block;margin-top:14px;font-weight:700;font-size:.92rem;color:var(--green-dark);text-decoration:none}
+.card a.visit:hover{text-decoration:underline}
+.card.media{padding:0;overflow:hidden}
+.card.media img{width:100%;height:100%;min-height:280px;object-fit:cover;display:block}
+.checks{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:9px;font-size:.92rem;color:var(--muted)}
+.checks li{display:flex;gap:10px;align-items:flex-start}
+.checks li::before{content:"✓";color:var(--green);font-weight:800;flex-shrink:0}
+/* signature chat block */
+.chat-panel{background:var(--card);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:28px;margin-top:16px}
+.chat-box{background:var(--bg);border-radius:16px;padding:22px;display:grid;gap:12px}
+.bubble{max-width:78%;padding:13px 17px;border-radius:18px;font-size:.95rem;line-height:1.5}
+.bubble .who{display:block;font-size:.66rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;margin-bottom:4px;opacity:.7}
+.bubble.client{background:#fff;border:1px solid var(--line);justify-self:start;border-bottom-left-radius:6px;color:var(--ink)}
+.bubble.brand{background:var(--green);color:#fff;justify-self:end;border-bottom-right-radius:6px}
+.chat-headline{font-family:"Sora";font-size:clamp(1.5rem,3.4vw,2.2rem);font-weight:800;color:#000;text-align:center;margin:24px 0 2px;letter-spacing:-.02em;line-height:1.15}
+.chat-headline span{color:var(--green)}
+/* demo strip */
+.demo-strip{background:#000;color:#fff;border-radius:24px;padding:38px 34px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:16px}
+.demo-strip h3{color:#fff;font-size:1.45rem;margin-bottom:6px}
+.demo-strip p{color:#c9c9c9;margin:0;font-size:.95rem;max-width:520px}
+.demo-strip .btn.primary{background:var(--green)}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:step}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:32px 26px;box-shadow:var(--shadow)}
+.step::before{counter-increment:step;content:"0" counter(step);font-family:"Sora";font-size:2.6rem;font-weight:800;color:var(--green);display:block;margin-bottom:14px;line-height:1}
+.step h3{font-size:1.2rem;margin-bottom:9px}
+.step p{color:var(--muted);font-size:.93rem;margin:0}
+/* pricing */
+.founding{max-width:700px;margin:0 auto 26px;border:1.5px solid var(--green);background:var(--green-soft);border-radius:16px;padding:14px 24px;text-align:center;font-size:.95rem;color:var(--ink)}
+.founding b{color:var(--green-dark)}
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}
+.pricing.single{grid-template-columns:1fr;max-width:560px;margin:0 auto}
+.price-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:34px 28px;display:flex;flex-direction:column;position:relative;box-shadow:var(--shadow);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.price-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.price-card.popular{border-color:var(--green);border-width:1.5px}
+.pop-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--green);color:#fff;font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:6px 15px;border-radius:999px;white-space:nowrap}
+.price-card h3{font-size:1.12rem;margin-bottom:6px}
+.price-card .desc{color:var(--muted);font-size:.88rem;margin-bottom:20px}
+.price{font-family:"Sora";font-size:2.55rem;font-weight:800;margin-bottom:4px;color:#000}
+.price small{font-size:1rem;color:var(--muted);font-weight:600}
+.per{color:var(--muted);font-size:.85rem;margin-bottom:22px}
+.features{list-style:none;padding:0;margin:0 0 26px;display:grid;gap:11px;font-size:.92rem;color:var(--muted)}
+.features li{display:flex;gap:10px;align-items:flex-start}
+.features li::before{content:"✓";color:var(--green);font-weight:800;flex-shrink:0}
+.price-card .btn{margin-top:auto;width:100%}
+.sub-head{text-align:center;margin:48px auto 26px;max-width:640px}
+.sub-head h3{font-size:1.45rem;margin-bottom:8px}
+.sub-head p{color:var(--muted);margin:0;font-size:.98rem}
+.setup-note{text-align:center;color:var(--muted);margin:26px auto 0;font-size:.92rem;max-width:760px}
+.setup-note b{color:#000}
+/* faq */
+.faq{max-width:780px;margin:auto;display:grid;gap:12px}
+.faq-item{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.faq-q{width:100%;background:none;border:0;color:#000;font:700 .99rem "Inter";text-align:left;padding:19px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-q span:last-child{color:var(--green);font-size:1.3rem;flex-shrink:0;transition:transform .25s}
+.faq-item.open .faq-q span:last-child{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;color:var(--muted);font-size:.93rem}
+.faq-a p{margin:0;padding:0 22px 19px}
+/* cta */
+.cta{background:linear-gradient(140deg,#07332a,#000000);border-radius:26px;padding:66px 40px;text-align:center;color:#fff}
+.cta h2{font-size:clamp(1.9rem,4.2vw,3.1rem);margin-bottom:13px;color:#fff}
+.cta h2 span{color:#3ec9ab}
+.cta p{color:#c9c9c9;max-width:560px;margin:0 auto 28px}
+.cta .hero-actions{justify-content:center}
+/* footer */
+footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-size:.85rem;background:#fff}
+.foot-in{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.foot-links{display:flex;gap:22px;flex-wrap:wrap}
+.foot-in a{text-decoration:none;font-weight:700;color:#000}
+.foot-in a:hover{color:var(--green-dark)}
+@media(max-width:900px){
+  .hero{padding:122px 0 60px}
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .problem-grid,.cards,.cards.two,.steps,.pricing{grid-template-columns:1fr}
+  .card.featured{grid-column:auto}
+  .nav-links a:not(.btn){display:none}
+  .section{padding:64px 0}
+  .cta{padding:48px 24px}
+  .demo-strip{padding:30px 24px}
+  .bubble{max-width:88%}
+  .hero-img{height:210px}
+}
+/* dynamic layer */
+.progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;background:transparent}
+.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--green),#3ec9ab);transform:scaleX(0);transform-origin:0 50%}
+.nav{transition:box-shadow .3s ease}
+.nav.scrolled{box-shadow:0 8px 30px rgba(0,0,0,.08)}
+@keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(0,150,120,.45)}70%{box-shadow:0 0 0 8px rgba(0,150,120,0)}100%{box-shadow:0 0 0 0 rgba(0,150,120,0)}}
+.live i,.eyebrow .pulse{animation:pulse-ring 2s infinite}
+.hero{position:relative;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0}
+.blob.b1{width:480px;height:480px;background:rgba(0,150,120,.16);top:-140px;right:-100px}
+.blob.b2{width:380px;height:380px;background:rgba(0,102,255,.10);bottom:-160px;left:-120px}
+.hero .wrap{position:relative;z-index:1}
+@keyframes drift1{from{transform:translate(0,0)}to{transform:translate(-46px,34px)}}
+@keyframes drift2{from{transform:translate(0,0)}to{transform:translate(40px,-26px)}}
+.blob.b1{animation:drift1 11s ease-in-out infinite alternate}
+.blob.b2{animation:drift2 13s ease-in-out infinite alternate}
+.marquee{background:#000;color:#fff;overflow:hidden;padding:15px 0;transform:rotate(-.6deg) scale(1.02)}
+.marquee-track{display:flex;gap:0;width:max-content;animation:mq 30s linear infinite}
+.marquee span{font-family:"Sora";font-weight:700;font-size:.92rem;letter-spacing:.04em;padding:0 18px;white-space:nowrap}
+.marquee b{color:#3ec9ab;font-weight:700}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.typing{display:none;align-items:center;gap:5px;background:var(--green);justify-self:end;padding:16px 18px}
+.typing.on{display:inline-flex}
+.typing i{width:7px;height:7px;border-radius:50%;background:#fff;opacity:.55;animation:tp 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}
+.typing i:nth-child(3){animation-delay:.3s}
+@keyframes tp{0%,60%,100%{transform:translateY(0);opacity:.55}30%{transform:translateY(-4px);opacity:1}}
+.call-fab{position:fixed;right:18px;bottom:18px;z-index:55;display:inline-flex;align-items:center;gap:9px;background:var(--green);color:#fff;font-weight:700;font-size:.92rem;text-decoration:none;padding:14px 22px;border-radius:999px;box-shadow:0 14px 34px rgba(0,120,95,.4);opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .35s ease,transform .35s ease}
+.call-fab.show{opacity:1;transform:translateY(0);pointer-events:auto}
+.call-fab svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.step{transition:transform .25s ease,box-shadow .25s ease}
+.step:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+@media (prefers-reduced-motion: reduce){
+  .marquee-track,.blob.b1,.blob.b2,.live i,.eyebrow .pulse,.typing i{animation:none!important}
+}
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
+<nav class="nav"><div class="wrap nav-in">
+  <a class="brand" href="#top"><img class="brand-logo" src="images/yassoclaw-logo.png" alt="YassoClaw AI"></a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#receptionist">AI Receptionist</a>
+    <a href="#websites">Website Dev</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a class="btn primary small" href="tel:+15167742538">Book a demo</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="blob b1" aria-hidden="true"></div><div class="blob b2" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+  <div class="hero-copy">
+    <span class="eyebrow"><span class="pulse"></span>AI agency for local businesses</span>
+    <h1>Your front desk, website &amp; follow-up — <span>handled.</span></h1>
+    <p class="lead">YassoClaw AI builds three systems for local businesses: an AI receptionist that answers every call, a website that turns visitors into callers, and automations that follow up before your competitors do.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="tel:+15167742538">Call Marcus — (516) 774-2538</a>
+      <a class="btn ghost" href="#services">See our services</a>
+    </div>
+    <p class="hero-note">Start with one system. Add the rest when you're ready.</p>
+    <p class="trades">Built for: <b>Plumbers · HVAC · Electricians · Restaurants · Roofers · Dental offices · Auto shops</b></p>
+  </div>
+  <div class="panel reveal">
+    <div class="panel-head"><span class="t">Why businesses hire us</span><span class="live"><i></i>Live demo line</span></div>
+    <img class="hero-img" src="images/barber.jpg" alt="Barbershop owner answering a customer phone call">
+    <div class="stat-row">
+      <div class="stat"><div class="n"><span data-count="62">62</span><em>%</em></div><p>of calls to small businesses go unanswered during work hours.</p></div>
+      <div class="stat"><div class="n"><span data-count="85">85</span><em>%</em></div><p>of callers who don't reach you never call back.</p></div>
+    </div>
+    <div class="svc-list">
+      <div class="svc-item"><div class="ic"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg></div><div><b>AI Receptionist</b><span>Every call answered, 24/7</span></div></div>
+      <div class="svc-item"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div><b>Website Dev</b><span>Turn visitors into callers — from $295</span></div></div>
+      <div class="svc-item"><div class="ic"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div><div><b>Automation</b><span>Follow-up that runs itself</span></div></div>
+    </div>
+  </div>
+</div></header>
+
+<section class="section" id="demo" style="padding-top:38px"><div class="wrap">
+  <div class="reveal" style="background:#0B1D3A;border-radius:22px;padding:clamp(28px,5vw,52px);color:#fff;position:relative;overflow:hidden">
+    <span class="eyebrow" style="color:#7FB2FF">Live demo — try it now</span>
+    <h2 style="color:#fff;margin:10px 0 12px">Hear an agent trained on <span style="color:#4D94FF">your</span> business.</h2>
+    <p style="color:#C9D6EA;max-width:640px">Paste your website below. In about a minute, our demo line answers as your business — your services, your hours, your address — using only what's on your site. Then call it and ask it anything.</p>
+    <form id="demoForm" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px">
+      <input id="demoUrl" type="text" inputmode="url" autocomplete="url" placeholder="yourbusiness.com" required style="flex:2 1 260px;padding:14px 16px;border-radius:12px;border:1px solid #2A4470;background:#0E2547;color:#fff;font-size:1rem">
+      <input id="demoBiz" type="text" autocomplete="organization" placeholder="Business name (optional)" style="flex:1 1 200px;padding:14px 16px;border-radius:12px;border:1px solid #2A4470;background:#0E2547;color:#fff;font-size:1rem">
+      <button class="btn primary" id="demoBtn" type="submit" style="flex:0 1 auto">Build my demo agent</button>
+    </form>
+    <p id="demoStatus" style="color:#C9D6EA;margin-top:16px;min-height:1.4em"></p>
+    <div id="demoReady" style="display:none;margin-top:6px">
+      <a class="btn primary" href="tel:+15512307280" style="font-size:1.05rem">Call your agent: +1 (551) 230-7280</a>
+      <p style="color:#C9D6EA;margin-top:12px;font-size:.92rem">Your demo stays live for 60 minutes, then resets. The demo line serves one business at a time. It takes requests only — it never confirms a booking — and it only says what's on your website.</p>
+    </div>
+  </div>
+</div></section>
+<script>
+(function(){
+  var form=document.getElementById('demoForm'),status=document.getElementById('demoStatus'),
+      ready=document.getElementById('demoReady'),btn=document.getElementById('demoBtn');
+  var API='https://jarvis-vps.tail27cf63.ts.net:10000/demo-build-e9d9b7e1ea52585ddc44af2cc6111219/build';
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var url=document.getElementById('demoUrl').value.trim(),
+        biz=document.getElementById('demoBiz').value.trim();
+    if(url && url.indexOf('://')===-1) url='https://'+url;
+    btn.disabled=true; ready.style.display='none';
+    status.textContent='Reading your website and training your agent — this takes about a minute…';
+    fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url:url,business:biz})})
+      .then(function(r){return r.json()})
+      .then(function(d){
+        btn.disabled=false;
+        if(d.ok){
+          status.textContent='Done — the demo line is now '+(d.business_name||'your business')+'.';
+          ready.style.display='block';
+        }else{
+          status.textContent=d.error||'Something went wrong. Try again.';
+        }
+      })
+      .catch(function(){
+        btn.disabled=false;
+        status.textContent='The demo builder is unreachable right now. Call Marcus at +1 (516) 774-2538 instead.';
+      });
+  });
+})();
+</script>
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track" id="mqTrack">
+  <span>AI Receptionist <b>✦</b></span><span>Website Dev <b>✦</b></span><span>Automation <b>✦</b></span><span>Review Requests <b>✦</b></span><span>Appointment Reminders <b>✦</b></span><span>QR Menus <b>✦</b></span><span>24/7 Call Answering <b>✦</b></span>
+</div></div>
+
+<main>
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="section-head reveal">
+    <span class="eyebrow">The problem</span>
+    <h2>Your phone rings. <span>Nobody answers.</span></h2>
+    <p>Customers don't leave voicemails anymore — they call the next business on Google.</p>
+  </div>
+  <div class="problem-grid">
+    <div class="problem-card reveal"><div class="num"><span data-count="62">62</span>%</div><p>of calls to small businesses <b>go unanswered</b> during work hours.</p></div>
+    <div class="problem-card reveal"><div class="num"><span data-count="85">85</span>%</div><p>of callers who don't reach you <b>never call back</b>.</p></div>
+    <div class="problem-card reveal"><div class="num">24/7</div><p>Emergencies happen at night. Your competitors' <b>voicemail doesn't book jobs</b>.</p></div>
+  </div>
+</div></section>
+
+<section class="section alt" id="services"><div class="wrap">
+  <div class="section-head reveal">
+    <span class="eyebrow">What we build</span>
+    <h2>Three systems. <span>One goal: more booked jobs.</span></h2>
+    <p><b style="color:#000">Websites • AI Receptionist • Automation</b> — We build websites, answer calls, and handle repetitive tasks so you can focus on growth. Pick the one that's leaking money today. Each system is built on your accounts, trained on your business, and tested with you live before launch.</p>
+  </div>
+  <div class="cards">
+    <div class="card featured reveal">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg></div>
+      <h3>AI Receptionist</h3>
+      <p>Meet Marcus — a trained AI voice agent that answers every call in under 3 seconds, 24/7. He greets callers by your business name, qualifies the job, collects the details, and takes booking requests. You hear about every call.</p>
+      <span class="tag">Our flagship</span><br>
+      <a class="visit" href="#receptionist">Meet Marcus →</a>
+    </div>
+    <div class="card reveal">
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+      <h3>Website Dev</h3>
+      <p>Fast, mobile-first websites built to turn visitors into callers — tap-to-call everywhere, your menu or services up front, and updates handled for you.</p>
+      <span class="tag">From $295</span><br>
+      <a class="visit" href="#websites">See our work →</a>
+    </div>
+    <div class="card reveal">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+      <h3>Automation</h3>
+      <p>The follow-up systems that run while you're on a job: review requests, appointment reminders, and DM auto-replies — built on your own accounts.</p>
+      <span class="tag">Custom quote</span><br>
+      <a class="visit" href="#automations">See automations →</a>
+    </div>
+    <div class="card featured reveal">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <h3>Built on your accounts. Tested with you live.</h3>
+      <p>We never sell you a black box. Every system runs on accounts you own, is trained on your services and your area, and gets tested with you on a live call before a single real customer touches it.</p>
+      <a class="visit" href="tel:+15167742538">Start with a call — (516) 774-2538</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="section" id="receptionist"><div class="wrap">
+  <div class="section-head reveal">
+    <span class="eyebrow">Service 01 — AI Receptionist</span>
+    <h2>Meet Marcus. <span>He answers, so you don't miss.</span></h2>
+    <p>Not a chatbot. A trained AI voice agent that picks up like your best receptionist — and never sleeps, never forgets, never has a bad day.</p>
+  </div>
+  <div class="cards">
+    <div class="card featured reveal">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg></div>
+      <h3>AI Phone Agent</h3>
+      <p>Answers every call in under 3 seconds, 24/7 — nights, weekends, and mid-job.</p>
+      <ul class="checks">
+        <li>Greets callers by your business name</li>
+        <li>Qualifies the job and collects name, address, and details</li>
+        <li>Takes booking requests and messages</li>
+        <li>Emergencies get flagged instantly</li>
+      </ul>
+      <span class="tag">Our flagship build</span>
+    </div>
+    <div class="card reveal">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div>
+      <h3>Instant Call Summaries</h3>
+      <p>After every call, you get a summary: who called, what they need, and what they requested. You stay in control without listening to a single voicemail.</p>
+    </div>
+  </div>
+  <div class="chat-panel reveal">
+    <div class="chat-box" id="chatBox">
+      <div class="bubble client"><span class="who">Client</span>Hi! Can I book an appointment?</div>
+      <div class="bubble typing" id="chatTyping" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="bubble brand" id="chatReply"><span class="who">YassoClaw AI</span>Of course — I've taken your booking request for tomorrow at 10am and sent it straight to the team.</div>
+    </div>
+    <p class="chat-headline">No missed calls. <span>No missed clients.</span></p>
+  </div>
+  <div class="demo-strip reveal">
+    <div>
+      <h3>Hear him yourself — the demo line is live.</h3>
+      <p>Call Marcus and talk to him like a customer would. Two minutes on the phone will tell you more than any sales pitch.</p>
+    </div>
+    <a class="btn primary" href="tel:+15167742538" style="min-height:54px;padding:0 30px">Call (516) 774-2538</a>
+  </div>
+</div></section>
+
+<section class="section alt" id="websites"><div class="wrap">
+  <div class="section-head reveal">
+    <span class="eyebrow">Service 02 — Website Dev</span>
+    <h2>Websites that turn visitors <span>into callers.</span></h2>
+    <p>Real sites, live right now. Click through and look around — this is the standard your site gets built to. Business websites from $295.</p>
+  </div>
+  <div class="cards">
+    <div class="card featured reveal">
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+      <h3>Prestige Marketplace</h3>
+      <p>A 24-hour deli &amp; grocery in Chelsea, New York City. The full menu is online — 240 items across 26 sections — with tap-to-call, directions, and a QR menu for the tables. The owner updates prices and specials himself from a Google Sheet, and the site follows in minutes. Rated 4.6 out of 5 from 23 Google reviews.</p>
+      <span class="tag">Live client site</span><br>
+      <a class="visit" href="https://prestigemarketplace29.com" target="_blank" rel="noopener">Visit prestigemarketplace29.com →</a>
+    </div>
+    <div class="card media reveal">
+      <img src="images/desk.jpg" alt="A business website open on a laptop and phone">
+    </div>
+    <div class="card reveal">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div>
+      <h3>Your business here</h3>
+      <p>Every website we ship gets listed in this portfolio. Want yours to be the next one? Call Marcus, hear how he works, and ask him about a website for your business.</p>
+      <a class="visit" href="tel:+15167742538">Call Marcus — (516) 774-2538</a>
+    </div>
+    <div class="card reveal">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg></div>
+      <h3>Built to convert</h3>
+      <ul class="checks">
+        <li>Tap-to-call and directions on every page</li>
+        <li>Your menu or services up front</li>
+        <li>Loads fast on any phone</li>
+      </ul>
+    </div>
+    <div class="card reveal">
+      <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM21 14v7h-7"/></svg></div>
+      <h3>QR menus &amp; ordering pages</h3>
+      <p>For restaurants and delis: a QR code on the table opens your full menu — no app, no printing costs when prices change.</p>
+    </div>
+    <div class="card reveal">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-2.64-6.36M21 3v6h-6"/></svg></div>
+      <h3>Updates handled for you</h3>
+      <p>Prices, hours, specials — send us the change and it's live. Or update a simple sheet yourself, like our clients do.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="section" id="automations"><div class="wrap">
+  <div class="section-head reveal">
+    <span class="eyebrow">Service 03 — Automation</span>
+    <h2>Follow-up that happens <span>even when you're on a job.</span></h2>
+    <p>The unglamorous systems that print money. Built on your own accounts and priced per project — tell us what's leaking and we'll scope it.</p>
+  </div>
+  <div class="cards">
+    <div class="card reveal">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div>
+      <h3>Review Requests</h3>
+      <p>Happy customer, job done — the system automatically asks for a Google review at the perfect moment. More 5-stars, higher ranking, more calls.</p>
+    </div>
+    <div class="card reveal">
+      <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+      <h3>Appointment Reminders</h3>
+      <p>Automatic confirmations and reminders before every visit. Fewer no-shows, fewer wasted trips, a fuller schedule.</p>
+    </div>
+    <div class="card reveal">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+      <h3>DM Auto-Reply</h3>
+      <p>Instagram and Facebook messages answered instantly with your services, hours, and booking path — so a DM at midnight doesn't go cold by morning.</p>
+    </div>
+    <div class="card featured reveal">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+      <h3>Priced per project — custom quote</h3>
+      <p>Every business leaks somewhere different. We look at where your customers fall off — missed calls, slow replies, no-shows, no reviews — and scope the automation that fixes that leak. No bundles you don't need.</p>
+      <a class="visit" href="tel:+15167742538">Scope my automation — (516) 774-2538</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="section alt" id="how"><div class="wrap">
+  <div class="section-head reveal">
+    <span class="eyebrow">How it works</span>
+    <h2>Live in <span>days, not months.</span></h2>
+  </div>
+  <div class="steps">
+    <div class="step reveal"><h3>Start with a call</h3><p>Call Marcus and hear the AI receptionist live — or just tell us which system you need: receptionist, website, or automations.</p></div>
+    <div class="step reveal"><h3>We build &amp; train it</h3><p>Your services, your prices, your service area, how you handle emergencies. The system learns your business, not a generic script.</p></div>
+    <div class="step reveal"><h3>Live in days</h3><p>We test it with you live before launch. Only when you're happy does it take a single real call, visit, or message.</p></div>
+  </div>
+</div></section>
+
+<section class="section" id="pricing"><div class="wrap">
+  <div class="section-head reveal" style="text-align:center;margin-left:auto;margin-right:auto">
+    <span class="eyebrow">Pricing</span>
+    <h2>Straight numbers. <span>No surprises.</span></h2>
+    <p>AI Receptionist pricing is published in full below. Websites start at $295. Automations are quoted per project.</p>
+  </div>
+  <div class="sub-head reveal" style="margin-top:0">
+    <h3>AI Receptionist — two steps</h3>
+    <p>Start with Simple Marcus. Step up to Full Payment when you want the job priced, paid, and created before you even call back. No contracts. Cancel anytime.</p>
+  </div>
+  <p class="founding reveal"><b>FOUNDING OFFER:</b> the first 3 customers lock in <b>50¢/min</b> on Simple Marcus — and the setup fee is waived.</p>
+  <div class="pricing" style="grid-template-columns:1fr 1fr;max-width:820px;margin:0 auto">
+    <div class="price-card reveal">
+      <span class="pop-badge" style="background:#101010">Step 1</span>
+      <h3>Simple Marcus</h3><p class="desc">Every call answered, details saved, appointment booked.</p>
+      <div class="price">$300<small> setup</small></div><p class="per">+ $50/mo platform, then $0.85/min pay as you go — you pay only when the phone rings</p>
+      <ul class="features">
+        <li>Answers every call, 24/7</li>
+        <li>Saves the caller's name, number &amp; request</li>
+        <li>Books the appointment or checks availability</li>
+        <li>Sends you a summary of every call</li>
+        <li>No contract — cancel anytime</li>
+      </ul>
+      <a class="btn ghost" href="tel:+15167742538">Start with Simple</a>
+    </div>
+    <div class="price-card popular reveal">
+      <span class="pop-badge">Step 2 — end to end</span>
+      <h3>Full Payment Setup</h3><p class="desc">Everything in Simple, plus the price, the payment, and the job — handled.</p>
+      <div class="price">$700<small> setup</small></div><p class="per">+ $100/mo — the complete system, end to end</p>
+      <ul class="features">
+        <li>Everything in Simple Marcus</li>
+        <li>Gives the caller your price</li>
+        <li>Collects payment online — into your own account</li>
+        <li>Sends the receipt to the customer</li>
+        <li>Creates the job &amp; notifies your team</li>
+        <li>Callbacks tracked on your dashboard</li>
+      </ul>
+      <a class="btn primary" href="tel:+15167742538">Go Full Payment</a>
+    </div>
+  </div>
+  <p class="setup-note reveal">Either way, we train the AI on your business, connect your line, and test it with you live before it takes a single real call.</p>
+  <div class="sub-head reveal">
+    <h3>Websites &amp; Automations</h3>
+    <p>One-time builds and per-project systems — no monthly lock-in beyond the service itself.</p>
+  </div>
+  <div class="pricing" style="grid-template-columns:1fr 1fr;max-width:820px;margin:0 auto">
+    <div class="price-card reveal">
+      <h3>Business Websites</h3><p class="desc">A site that turns visitors into callers.</p>
+      <div class="price"><small>From</small> $295</div><p class="per">One-time build</p>
+      <ul class="features">
+        <li>Mobile-first design</li>
+        <li>Tap-to-call &amp; directions</li>
+        <li>Menu / services pages</li>
+        <li>Updates handled for you</li>
+      </ul>
+      <a class="btn ghost" href="tel:+15167742538">Ask about a website</a>
+    </div>
+    <div class="price-card reveal">
+      <h3>Automations</h3><p class="desc">Follow-up systems, scoped to your leak.</p>
+      <div class="price">Custom <small>quote</small></div><p class="per">Scoped per project</p>
+      <ul class="features">
+        <li>Review requests</li>
+        <li>Appointment reminders</li>
+        <li>DM auto-reply</li>
+      </ul>
+      <a class="btn ghost" href="tel:+15167742538">Scope my automation</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="section alt" id="faq"><div class="wrap">
+  <div class="section-head reveal" style="text-align:center;margin-left:auto;margin-right:auto">
+    <span class="eyebrow">FAQ</span>
+    <h2>Fair <span>questions.</span></h2>
+  </div>
+  <div class="faq">
+    <div class="faq-item reveal"><button class="faq-q">Do you only build AI receptionists?<span>+</span></button><div class="faq-a"><p>No. The AI receptionist is our flagship, but we also build business websites — from $295 — and follow-up automations like review requests, appointment reminders, and DM auto-reply. Most clients start with one system and add the others later.</p></div></div>
+    <div class="faq-item reveal"><button class="faq-q">Will callers know it's AI?<span>+</span></button><div class="faq-a"><p>It introduces itself naturally and most callers just have a normal conversation — it answers questions and takes their details and booking request. If someone asks, it's upfront about being an AI assistant.</p></div></div>
+    <div class="faq-item reveal"><button class="faq-q">What if it can't handle a call?<span>+</span></button><div class="faq-a"><p>Anything it isn't sure about gets flagged and sent straight to you immediately. You never lose a caller to confusion — the system hands off instead of guessing.</p></div></div>
+    <div class="faq-item reveal"><button class="faq-q">Does it work with my current phone number?<span>+</span></button><div class="faq-a"><p>Yes. We can forward your existing line to the AI after hours (or full-time), or set it up on its own number. Your customers dial the same number they've always dialed.</p></div></div>
+    <div class="faq-item reveal"><button class="faq-q">How long does setup take?<span>+</span></button><div class="faq-a"><p>Days, not weeks. We train it on your services and area, test it with you on a live call, and only then point real customers at it.</p></div></div>
+    <div class="faq-item reveal"><button class="faq-q">Can I cancel anytime?<span>+</span></button><div class="faq-a"><p>Yes. Monthly billing, no contracts, no cancellation fees. If it doesn't book jobs, you shouldn't pay for it.</p></div></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <div class="cta reveal">
+    <h2>Pick the leak. <span>We'll plug it.</span></h2>
+    <p>Calls going to voicemail, a website that doesn't convert, or follow-up that never happens — start with a two-minute call and hear the product yourself.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="tel:+15167742538" style="min-height:56px;padding:0 34px;font-size:1.03rem">Call Marcus — (516) 774-2538</a>
+      <a class="btn ghost" href="mailto:contact@yassoclaw.com" style="min-height:56px;padding:0 34px;font-size:1.03rem;background:transparent;color:#fff;border-color:rgba(255,255,255,.4)">contact@yassoclaw.com</a>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap foot-in">
+  <span><img class="foot-logo" src="images/yassoclaw-logo-icon.png" alt="">© 2026 YassoClaw AI. All rights reserved.</span>
+  <div class="foot-links">
+    <a href="tel:+15167742538">(516) 774-2538</a>
+    <a href="mailto:contact@yassoclaw.com">contact@yassoclaw.com</a>
+    <a href="https://www.instagram.com/yassoclaw.ai" target="_blank" rel="noopener">@yassoclaw.ai</a>
+  </div>
+</div></footer>
+
+<a class="call-fab" id="callFab" href="tel:+15167742538"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>Call Marcus</a>
+
+<script>
+// faq accordion
+document.querySelectorAll('.faq-item').forEach(item=>{
+  const q=item.querySelector('.faq-q'),a=item.querySelector('.faq-a');
+  q.addEventListener('click',()=>{
+    const open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(o=>{o.classList.remove('open');o.querySelector('.faq-a').style.maxHeight=null});
+    if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}
+  });
+});
+</script>
+<script>
+// Motion: Lenis smooth scroll + GSAP ScrollTrigger reveals and counters.
+// Everything is set from JS only (gsap.from), so content is fully visible if the CDNs fail.
+document.addEventListener('DOMContentLoaded',function(){
+  var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduced||!window.gsap||!window.ScrollTrigger)return;
+  gsap.registerPlugin(ScrollTrigger);
+  var lenis=null;
+  if(window.Lenis){
+    lenis=new Lenis({duration:1.15,smoothWheel:true});
+    lenis.on('scroll',ScrollTrigger.update);
+    gsap.ticker.add(function(time){lenis.raf(time*1000)});
+    gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click',function(e){
+        var id=a.getAttribute('href');
+        if(id&&id.length>1){
+          var el=document.querySelector(id);
+          if(el){e.preventDefault();lenis.scrollTo(el,{offset:-84});}
+        }
+      });
+    });
+  }
+  gsap.utils.toArray('.reveal').forEach(function(el){
+    gsap.from(el,{y:28,opacity:0,duration:.8,ease:'power2.out',
+      scrollTrigger:{trigger:el,start:'top 88%',once:true}});
+  });
+  document.querySelectorAll('[data-count]').forEach(function(el){
+    var target=parseInt(el.getAttribute('data-count'),10);
+    if(isNaN(target))return;
+    var obj={v:0};
+    gsap.to(obj,{v:target,duration:1.4,ease:'power1.out',
+      scrollTrigger:{trigger:el,start:'top 92%',once:true},
+      onUpdate:function(){el.textContent=Math.round(obj.v)}});
+  });
+  // hero entrance
+  var tl=gsap.timeline({defaults:{ease:'power3.out'}});
+  tl.from('.hero-copy .eyebrow',{y:16,opacity:0,duration:.5})
+    .from('.hero-copy h1',{y:34,opacity:0,duration:.7},'-=.25')
+    .from('.hero-copy .lead',{y:24,opacity:0,duration:.6},'-=.4')
+    .from('.hero-copy .hero-actions',{y:18,opacity:0,duration:.5},'-=.35')
+    .from('.hero-copy .hero-note,.hero-copy .trades',{y:12,opacity:0,duration:.45,stagger:.1},'-=.3')
+    .from('.hero .panel',{x:44,opacity:0,duration:.75},'-=.7')
+    .from('.hero .svc-item',{y:16,opacity:0,duration:.45,stagger:.09},'-=.4');
+  // parallax on photos
+  gsap.to('.hero-img',{yPercent:7,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  var mediaImg=document.querySelector('.card.media img');
+  if(mediaImg){
+    gsap.fromTo(mediaImg,{yPercent:-6,scale:1.12},{yPercent:6,scale:1.12,ease:'none',
+      scrollTrigger:{trigger:mediaImg,start:'top bottom',end:'bottom top',scrub:true}});
+  }
+  // chat demo: client asks, typing dots, Marcus replies
+  var chatBox=document.getElementById('chatBox');
+  if(chatBox){
+    var client=chatBox.querySelector('.bubble.client'),
+        typing=document.getElementById('chatTyping'),
+        reply=document.getElementById('chatReply');
+    var ctl=gsap.timeline({scrollTrigger:{trigger:chatBox,start:'top 78%',once:true}});
+    ctl.from(client,{y:14,opacity:0,duration:.45,ease:'power2.out'})
+       .add(function(){typing.classList.add('on')},'+=.35')
+       .to({},{duration:1.05})
+       .add(function(){typing.classList.remove('on')})
+       .from(reply,{y:14,opacity:0,scale:.96,duration:.5,ease:'back.out(1.6)'});
+  }
+  // subtle 3D tilt on cards (desktop pointers only)
+  if(window.matchMedia('(pointer: fine)').matches){
+    document.querySelectorAll('.card,.price-card,.problem-card').forEach(function(card){
+      card.addEventListener('pointermove',function(e){
+        var r=card.getBoundingClientRect(),
+            rx=((e.clientY-r.top)/r.height-.5)*-5,
+            ry=((e.clientX-r.left)/r.width-.5)*5;
+        gsap.to(card,{rotateX:rx,rotateY:ry,transformPerspective:800,duration:.4,ease:'power2.out'});
+      });
+      card.addEventListener('pointerleave',function(){
+        gsap.to(card,{rotateX:0,rotateY:0,duration:.55,ease:'power3.out'});
+      });
+    });
+    // magnetic pull on the main call buttons
+    document.querySelectorAll('.hero-actions .btn.primary,.cta .btn.primary').forEach(function(btn){
+      btn.addEventListener('pointermove',function(e){
+        var r=btn.getBoundingClientRect();
+        gsap.to(btn,{x:(e.clientX-r.left-r.width/2)*.18,y:(e.clientY-r.top-r.height/2)*.28,duration:.35});
+      });
+      btn.addEventListener('pointerleave',function(){gsap.to(btn,{x:0,y:0,duration:.5,ease:'power3.out'})});
+    });
+  }
+});
+</script>
+<script>
+// Scroll-driven UI (vanilla, works with or without GSAP): progress bar, nav shadow, call button, marquee loop.
+(function(){
+  var bar=document.getElementById('progressBar'),
+      nav=document.querySelector('.nav'),
+      fab=document.getElementById('callFab'),
+      mq=document.getElementById('mqTrack');
+  if(mq){mq.innerHTML+=mq.innerHTML;}
+  function onScroll(){
+    var h=document.documentElement,
+        max=h.scrollHeight-h.clientHeight,
+        p=max>0?(h.scrollTop||document.body.scrollTop)/max:0;
+    if(bar)bar.style.transform='scaleX('+p+')';
+    if(nav)nav.classList.toggle('scrolled',h.scrollTop>10);
+    if(fab)fab.classList.toggle('show',h.scrollTop>520);
+  }
+  document.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+})();
+</script>
+</body>
+</html>
